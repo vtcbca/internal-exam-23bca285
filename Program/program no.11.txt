@@ -1,0 +1,33 @@
+11)create table team (tid,country,total match,win,loss)insert 8 records .create trigger on the verify the match is not 0.export data into csv file csv
+import sqlite3 as sq
+con=sq.connect("D:\SYBCA285//sqlite3//team.db")
+cur=con.cursor()
+q=("create table if not exists team(tid int primary key,tname text,country,total match,win,loss)")
+c=("create trigger if not exists team\
+  before insert on team\
+  begin\
+  select\
+  case\
+  when match is not 0 then raise(abort,match is 0) end; end;")
+q=("insert into team values(21,'radha','india',2,'win','loss'),\
+(22,'rinu','australia',4,'win','loss'),\
+(23,'nil,'pakisthan',5,'win',loss),\
+(24,'mink','india',4,'win','loss'),\
+(25,'nilam','sri lanka',15,'win','loss'),\
+(26,'kiran','pakistan',3,'win,'loss')\
+(27,'anjali','india',4,'win','loss')\
+(28,'anu','australia',3,'win','loss'),\)");
+q=("select * from team")
+rec=q.fetchall()
+print(rec)
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+Input In [62], in <cell line: 1>()
+----> 1 rec=q.fetchall()
+      2 print(rec)
+
+AttributeError: 'str' object has no attribute 'fetchall'
+
+con.commit()
+from  csv import reader    
+f=open("")
